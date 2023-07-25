@@ -12,6 +12,7 @@
     "@nuxt/devtools": "latest",
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@types/node": "^18.17.0",
+    "daisyui": "^3.4.0",
     "eslint": "^8.0.1",
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.25.2",
