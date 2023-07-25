@@ -6,7 +6,8 @@ module.exports = {
   },
   extends: [
     'standard',
-    'plugin:vue/vue3-essential'
+    'plugin:vue/vue3-essential',
+    '@nuxt/eslint-config'
   ],
   parserOptions: {
     ecmaVersion: 'latest',
