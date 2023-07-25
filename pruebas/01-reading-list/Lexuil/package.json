@@ -20,5 +20,8 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-vue": "^9.15.1",
     "nuxt": "^3.6.5"
+  },
+  "dependencies": {
+    "oh-vue-icons": "^1.0.0-rc3"
   }
 }
