@@ -15,9 +15,18 @@
 const readingList = ref([])
 function updateReadingList (newValue) {
   readingList.value = newValue
+  localStorage.setItem('readingList', JSON.stringify(newValue))
 }
 provide('readingList', {
   readingList,
   updateReadingList
+})
+
+onMounted(() => {
+  const storedReadingList = localStorage.getItem('readingList')
+
+  if (storedReadingList) {
+    readingList.value = JSON.parse(storedReadingList)
+  }
 })
 </script>
