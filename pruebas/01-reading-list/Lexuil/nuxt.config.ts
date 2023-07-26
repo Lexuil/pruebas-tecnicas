@@ -10,5 +10,8 @@ export default defineNuxtConfig({
         ? 'https://nuxtjs.org'
         : 'http://localhost:3000'
     }
+  },
+  build: {
+    transpile: ['oh-vue-icons']
   }
 })
