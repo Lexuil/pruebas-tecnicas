@@ -8,13 +8,9 @@
 </template>
 
 <script setup>
-const config = useRuntimeConfig()
 const books = ref([])
 provide('books', books)
 
-fetch(`${config.public.baseUrl}/books.json`)
-  .then((response) => response.json())
-  .then((data) => {
-    books.value = data.library
-  })
+const { getBooks } = useGetBooks()
+books.value = await getBooks()
 </script>
