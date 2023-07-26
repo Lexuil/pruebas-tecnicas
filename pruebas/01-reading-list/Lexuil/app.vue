@@ -58,9 +58,10 @@
 </template>
 
 <script setup>
+const config = useRuntimeConfig()
 const books = ref([])
 
-fetch('/books.json')
+fetch(`${config.public.baseUrl}/books.json`)
   .then((response) => response.json())
   .then((data) => {
     books.value = data.library
