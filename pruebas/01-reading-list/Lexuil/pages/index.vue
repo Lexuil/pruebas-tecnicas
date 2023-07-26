@@ -1,6 +1,6 @@
 <template>
   <main class="max-w-7xl mx-auto">
-    <h2>{{ books?.length }} libros disponibles</h2>
+    <h2>{{ books.length }} libros disponibles</h2>
 
     <FiltersControls />
     <BooksList />
@@ -9,7 +9,13 @@
 
 <script setup>
 const books = ref([])
-provide('books', books)
+function updateBooks (newValue) {
+  books.value = newValue
+}
+provide('books', {
+  books,
+  updateBooks
+})
 
 const { getBooks } = useGetBooks()
 books.value = await getBooks()

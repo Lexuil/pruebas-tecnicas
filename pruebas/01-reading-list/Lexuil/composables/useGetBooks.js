@@ -5,7 +5,24 @@ export default function () {
     return (await response.json()).library
   }
 
+  const getGenres = async () => {
+    const books = await getBooks()
+    const genres = new Set()
+    for (const bookData of books) {
+      genres.add(bookData.book.genre)
+    }
+    return genres
+  }
+
+  const filterBooks = async (genre) => {
+    const books = await getBooks()
+    const filteredBooks = books.filter((book) => book.book.genre === genre)
+    return filteredBooks
+  }
+
   return {
-    getBooks
+    getBooks,
+    getGenres,
+    filterBooks
   }
 }
