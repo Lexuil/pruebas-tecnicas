@@ -4,9 +4,10 @@
     class="grid grid-cols-auto-fit justify-items-center gap-5 my-10"
   >
     <li
-      v-for="({ book }, index) in books"
-      :key="index"
+      v-for="({ book }) in books"
+      :key="book.ISBN"
       class="h-96 w-auto"
+      @click="updateReadingList([...readingList, book])"
     >
       <img
         :src="book.cover"
@@ -19,10 +20,19 @@
 </template>
 
 <script setup>
-const { books } = inject(
+const { books: allBooks } = inject(
   'books',
-  { books: [], updateBooks: () => {} }
+  { books: [] }
 )
+const { readingList, updateReadingList } = inject(
+  'readingList',
+  { readingList: [], updateReadingList: () => {} }
+)
+const books = computed(() => {
+  return allBooks.value.filter(({ book }) => {
+    return !readingList.value.find((item) => item.ISBN === book.ISBN)
+  })
+})
 </script>
 
 <script>
