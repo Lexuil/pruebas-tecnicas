@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       baseUrl: process.env.NODE_ENV === 'production'
-        ? 'https://nuxtjs.org'
+        ? process.env.BASE_URL
         : 'http://localhost:3000'
     }
   },
