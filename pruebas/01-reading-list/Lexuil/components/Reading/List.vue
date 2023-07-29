@@ -1,7 +1,7 @@
 <template>
   <div class="fixed bottom-0 w-full bg-gradient-to-t from-base-100 p-5 h-28 hover:h-96 overflow-y-auto">
     <h2 class="text-center">
-      Lista de lectura
+      Libros pendientes
     </h2>
 
     <ul class="grid grid-cols-auto-fit justify-items-center gap-5 my-10">
