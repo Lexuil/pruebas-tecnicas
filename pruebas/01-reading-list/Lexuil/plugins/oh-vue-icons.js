@@ -1,12 +1,12 @@
 import { OhVueIcon, addIcons } from 'oh-vue-icons'
 
 import {
-  BiCodeSquare
+  BiBookmarksFill
 } from 'oh-vue-icons/icons'
 
 export default defineNuxtPlugin((nuxtApp) => {
   addIcons(
-    BiCodeSquare
+    BiBookmarksFill
   )
   nuxtApp.vueApp.component('vi-icon', OhVueIcon)
 })

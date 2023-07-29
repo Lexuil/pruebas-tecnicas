@@ -1,14 +1,10 @@
 <template>
-  <div class="fixed bottom-0 w-full bg-gradient-to-t from-base-100 p-5 h-28 hover:h-96 overflow-y-auto">
-    <h2 class="text-center">
-      Libros pendientes
-    </h2>
-
-    <ul class="grid grid-cols-auto-fit justify-items-center gap-5 my-10">
+  <div class="fixed top-0 -right-44 hover:right-0 h-screen bg-gradient-to-l from-base-100 p-5 w-64 overflow-y-auto">
+    <ul class="flex flex-col items-center space-y-5 mt-10">
       <li
         v-for="book in readingList"
         :key="book.ISBN"
-        class="h-56 w-auto"
+        class="w-40 h-auto"
         @click="removeBookFromReadingList(book)"
       >
         <img

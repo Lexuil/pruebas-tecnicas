@@ -7,7 +7,7 @@ test.describe('UI', () => {
     await expect(
       page.getByRole(
         'heading',
-        { name: 'Lista de lectura' }
+        { name: 'Librería' }
       )
     ).toBeVisible()
   })
