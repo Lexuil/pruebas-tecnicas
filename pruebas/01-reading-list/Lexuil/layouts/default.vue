@@ -28,5 +28,11 @@ onMounted(() => {
   if (storedReadingList) {
     readingList.value = JSON.parse(storedReadingList)
   }
+
+  window.addEventListener('storage', (event) => {
+    if (event.key === 'readingList') {
+      readingList.value = JSON.parse(event.newValue)
+    }
+  })
 })
 </script>
